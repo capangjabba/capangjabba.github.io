@@ -1,0 +1,7 @@
+# Hugo build output (rebuilt by the Pages workflow)
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# OS
+.DS_Store

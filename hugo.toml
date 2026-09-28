@@ -1,5 +1,5 @@
 title = "Irfan Haziq's Site"
-baseURL = 'https://brocapang.github.io/'
+baseURL = 'https://capangjabba.github.io/'
 languageCode = 'en-us'
 theme = "papermod"
 enableInlineShortcodes = true
@@ -37,7 +37,7 @@ Title = "My Personal Site"
 Content = "Collection of blog from my projects"
 [[params.socialIcons]]
 name = "Github"
-url = "https://github.com/broCapang"
+url = "https://github.com/capangjabba"
 
 [[params.socialIcons]]
 name = "LinkedIn"
