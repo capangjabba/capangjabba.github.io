@@ -394,12 +394,3 @@ kubectl -n mongodb rollout status statefulset/rs0 --timeout=10m
 ```
 
 Then start the balancer again, and run the pre-checks from step 1. Everything should report 7.0.20.
-
-# Where the Downtime Actually Happens
-
-<!-- TODO: the measured numbers. -->
-
-# Lessons Learned
-
-<!-- TODO -->
-
