@@ -1,5 +1,6 @@
 +++
 title = 'Upgrading a Sharded MongoDB Cluster on Kubernetes with Minimal Downtime'
+description = "How I ran a rolling upgrade of a self-managed sharded MongoDB cluster on Kubernetes from 7.0.20 to 7.0.30, without an operator."
 date = 2026-09-29T12:54:24+08:00
 draft = false
 categories = ["DevOps"]

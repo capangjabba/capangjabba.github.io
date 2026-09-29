@@ -1,5 +1,6 @@
 +++
-title = 'Bubar Parlimen [Malware Analysis]'
+title = 'Bubar Parlimen Maldoc Analysis: Remote Template VBA Macro'
+description = "Malware analysis of bubarparlimen.docx, a Word document that pulls in a remote macro-enabled template with obfuscated VBA that drops and runs a payload."
 date = 2025-01-23T10:36:00+08:00
 draft = false
 categories = ["Malware Analysis"]

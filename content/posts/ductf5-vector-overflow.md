@@ -1,5 +1,6 @@
 +++
-title = 'DUCTF5 Vector Overflow [PWN]'
+title = 'DownUnderCTF 2024 Vector Overflow Writeup'
+description = "DUCTF 2024 pwn writeup: how a C++ std::vector is laid out in memory, and how overflowing an adjacent buffer changes where the vector points."
 date = 2025-01-23T10:23:44+08:00
 draft = false
 categories = ["CTF Writeup"]

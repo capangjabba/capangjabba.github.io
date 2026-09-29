@@ -1,5 +1,6 @@
 +++
-title = 'OSCTF Lib Riddle [PWN]'
+title = 'OSCTF Lib Riddle Writeup: ret2libc with an Unknown libc'
+description = "OSCTF pwn writeup: a 64-bit buffer overflow solved with ROP, leaking GOT entries to identify the remote libc version before a ret2libc attack."
 date = 2025-01-23T10:22:44+08:00
 draft = false
 categories = ["CTF Writeup"]

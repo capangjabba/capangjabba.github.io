@@ -1,5 +1,6 @@
 +++
-title = 'ASEAN Notes.iso Mustang Panda [Malware Analysis]'
+title = 'ASEAN Notes.iso Malware Analysis: Mustang Panda DLL Sideloading'
+description = "Analysis of the ASEAN Notes.iso sample from a Mustang Panda (Stately Taurus) campaign: LNK lures, DLL sideloading, Run key persistence and C2 IOCs."
 date = 2025-01-25T03:49:34+08:00
 draft = false
 categories = ["Malware Analysis"]

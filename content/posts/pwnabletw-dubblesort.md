@@ -1,5 +1,6 @@
 +++
-title = 'pwnable.tw Dubblesort'
+title = 'pwnable.tw Dubblesort Writeup: Stack Canary Bypass and ret2libc'
+description = "Walkthrough of the pwnable.tw dubblesort challenge: leaking libc from an uninitialized buffer, an out-of-bounds write in a sorting routine, and ret2libc."
 date = 2025-02-08T00:45:26+08:00
 draft = false
 categories = ["CTF Writeup"]

@@ -1,5 +1,6 @@
 +++
-title = 'pwnable.tw Hacknote'
+title = 'pwnable.tw Hacknote Writeup: Heap Use-After-Free'
+description = "Walkthrough of the pwnable.tw Hacknote challenge, a use-after-free in a 32-bit note manager, from reversing the binary to getting a shell."
 date = 2025-02-13T17:20:36+08:00
 draft = false
 categories = ["CTF Writeup"]

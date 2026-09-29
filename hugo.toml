@@ -1,4 +1,4 @@
-title = "Irfan Haziq's Site"
+title = "Irfan Haziq's Blog"
 baseURL = 'https://capangjabba.github.io/'
 locale = 'en-us'
 theme = "papermod"
@@ -11,6 +11,9 @@ pagerSize = 6
 
 [params]
 
+description = "DevOps, Platform Engineering, CTF writeups and malware stuff by Irfan Haziq. More will come!"
+author = "Irfan Haziq / Capang"
+images = ["images/og-default.png"]
 defaultTheme = "auto"
 ShowShareButtons = true
 ShowReadingTime = true
@@ -36,8 +39,8 @@ series = "series"
 tag = "tags"
 
 [params.homeInfoParams]
-Title = "My Personal Site"
-Content = "Collection of blog from my projects"
+Title = "I'm Irfan Haziq / Capang"
+Content = "I write about DevOps and Kubernetes, CTF challenges, malware analysis and there will be more to come! I have deep passion in learning about computers, so this is where I share it all."
 [[params.socialIcons]]
 name = "Github"
 url = "https://github.com/capangjabba"

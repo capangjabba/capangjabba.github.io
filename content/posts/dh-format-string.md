@@ -1,5 +1,6 @@
 +++
-title = 'DreamHack Wargames Format String [PWN]'
+title = 'DreamHack Format String Writeup (fsb_overwrite)'
+description = "Beginner-friendly DreamHack wargame writeup: using a format string bug to leak an address, defeat PIE and overwrite a global variable."
 date = 2025-01-23T10:27:11+08:00
 draft = false
 categories = ["CTF Writeup"]

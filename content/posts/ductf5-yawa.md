@@ -1,5 +1,6 @@
 +++
-title = 'DUCTF5 Yawa [PWN]'
+title = 'DownUnderCTF 2024 Yawa Writeup: Canary Leak and ret2libc'
+description = "DUCTF 2024 pwn writeup for yawa: using a buffer overflow and printf %s to leak the stack canary and a libc address, then ret2libc."
 date = 2025-01-23T10:23:44+08:00
 draft = false
 categories = ["CTF Writeup"]

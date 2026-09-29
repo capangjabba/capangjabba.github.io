@@ -1,5 +1,6 @@
 +++
-title = 'ACS24 Vietnam Team Teh Tarik Cendol Writeup'
+title = 'ASEAN Cyber Shield 2024 Writeup: Team Teh Tarik Cendol'
+description = "Team Teh Tarik Cendol writeups from ASEAN Cyber Shield (ACS) 2024 in Vietnam, covering pwn, reverse engineering, web, misc and crypto challenges."
 author = ["Jeremy","Capang","Jia Qi","Aniq"]
 date = 2025-01-24T04:04:31+08:00
 draft = false

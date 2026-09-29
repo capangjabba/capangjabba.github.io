@@ -1,5 +1,6 @@
 +++
-title = 'Morpheus MCC23 [B2R]'
+title = 'TryHackMe Morpheus (MCC 2023) Walkthrough'
+description = "Boot2root walkthrough of the Morpheus box from MCC 2023: web enumeration, brute-forcing an OpenEMR login, a public CVE for a shell, and sudo to root."
 date = 2025-01-23T10:27:44+08:00
 draft = false
 categories = ["CTF Writeup"]

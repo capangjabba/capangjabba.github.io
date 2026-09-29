@@ -1,5 +1,6 @@
 +++
-title = 'IHack24 Morse Encoder [PWN]'
+title = 'I-Hack 2024 Morse Encoder Writeup: Shellcode Injection'
+description = "First blood writeup for the I-Hack 2024 qualifier pwn challenge Morse Encoder, a 32-bit buffer overflow with an executable stack."
 date = 2025-01-23T10:26:49+08:00
 draft = false
 categories = ["CTF Writeup"]
