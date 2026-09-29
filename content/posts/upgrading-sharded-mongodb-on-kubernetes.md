@@ -1,39 +1,41 @@
 +++
-title = 'Custom Sharded MongoDB Migration in k8s with Minimal Downtime'
+title = 'Upgrading a Sharded MongoDB Cluster on Kubernetes with Minimal Downtime'
 date = 2026-09-29T12:54:24+08:00
 draft = false
 categories = ["DevOps"]
-tags = ["kubernetes", "mongodb", "migration"]
+tags = ["kubernetes", "mongodb", "upgrade"]
+aliases = ["/posts/k8s-sharded-mongodb-migration/"]
 +++
 
 <!-- TODO: 2-3 sentence summary: 7.0.20 → 7.0.30 to patch MongoBleed, rolling upgrade, how much downtime in the end. -->
 
 # Background
 
-Few months back in my previous company, I led the project to upgrade our Customer Shared MongoDB Cluster which deployed on kubernetes cluster. Our MongoDB infra at that time doesnt have any kubernetes operator and requires manual upgrade/migration process. In this blog I want to explain the Sharded MongoDB Architecture and how kubernetes features come into play during this migration.
+A few months back, at my previous company, I led the project to upgrade our custom sharded MongoDB cluster, which was deployed on Kubernetes. At that time, our MongoDB infrastructure didn't use any Kubernetes operator, so upgrades had to be done manually. In this blog, I want to explain the sharded MongoDB architecture and how Kubernetes features come into play during the upgrade.
 
 <!-- TODO: why now: MongoBleed (CVE-2025-14847), fixed in 7.0.28. -->
 
-# Understanding Sharded MongoDB Cluster in kubernetes
+# Understanding a Sharded MongoDB Cluster in Kubernetes
 
-In a sharded MongoDB Cluster, It involves 3 Main Components
+A sharded MongoDB cluster has 3 main components:
+
 1. Mongos Router
-2. Config Server/Metada
+2. Config Server/Metadata
 3. Shards
 
-MongoDB official documentation provides very in-depth detail about this: https://www.mongodb.com/docs/manual/core/sharded-cluster-components/#sharded-cluster-components , however I like to also explain how I understands it
+The official MongoDB documentation explains this in depth: [Sharded Cluster Components](https://www.mongodb.com/docs/manual/core/sharded-cluster-components/#sharded-cluster-components). However, I'd also like to explain how I understand it.
 
 ## Mongos Router
 
-Mongos Router is a "stateless" component that routes MongoDB traffic/connection to the sharded cluster. It provides an interface for applications to communicate with the shards. Applications connection with the sharded cluster is never direct, it will go through Mongos Router.
+The Mongos Router is a "stateless" component that routes MongoDB traffic and connections to the sharded cluster. It provides the interface applications use to communicate with the shards. Applications never connect to the shards directly; every connection goes through the Mongos Router.
 
 ## Config Server/Metadata
 
-Config Server/Metadata is the component responsible in having the knowledge on "which data is stored at which shards", hence the name, metadata. Mongos Router frequently communicates with Config Server to route any operations to the correct shards. In simple words, Config Server is like the "Table of Contents" for the shards.
+The Config Server is the component responsible for knowing "which data is stored on which shard", hence the name metadata. The Mongos Router frequently communicates with the Config Server to route operations to the correct shard. In simple words, the Config Server is like the "Table of Contents" for the shards.
 
 ## Shards
 
-Shards are the component that is storing our data.
+Shards are the components that store our data.
 
 <!-- TODO: each shard (and the config server) is itself a 3-member replica set: 1 primary, 2 secondaries. -->
 
@@ -68,7 +70,7 @@ We ran the same topology in every environment: one config server replica set, tw
 | Backup before upgrade | `mongodump` only | Disk snapshots + `mongodump` | Disk snapshots + `mongodump` |
 | Risk | Low | Medium | High |
 
-Dev has no volume snapshots, because at that time, longhorn doesnt support kubernetes VolumeSnapshoting feature, so a `mongodump` is the only backup there. Stage mirrors Prod exactly, so the procedure is proven on the same topology before it touches Prod.
+Dev has no volume snapshots because, at that time, Longhorn didn't support the Kubernetes VolumeSnapshot feature, so a `mongodump` is the only backup there. Stage mirrors Prod exactly, so the procedure is proven on the same topology before it touches Prod.
 
 # The Upgrade Plan
 
@@ -91,7 +93,7 @@ Inside each step, Kubernetes does the rolling for us. With the `RollingUpdate` s
 
 We rehearsed the whole thing in Dev, then Stage, and only then Prod.
 
-# Doing the Upgrade 
+# Doing the Upgrade
 
 ## 1. Pre-checks
 
