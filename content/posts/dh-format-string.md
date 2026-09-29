@@ -2,7 +2,8 @@
 title = 'DreamHack Wargames Format String [PWN]'
 date = 2025-01-23T10:27:11+08:00
 draft = false
-tags = ["PWN","DreamHack Wargames"]
+categories = ["CTF Writeup"]
+tags = ["pwn", "format-string"]
 +++
 
 

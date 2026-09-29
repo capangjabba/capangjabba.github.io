@@ -2,7 +2,9 @@
 title = 'DUCTF5 Yawa [PWN]'
 date = 2025-01-23T10:23:44+08:00
 draft = false
-tags = ["PWN", "DUCTF5"]
+categories = ["CTF Writeup"]
+series = ["DUCTF 2024"]
+tags = ["pwn", "buffer-overflow", "stack-canary", "ret2libc"]
 +++
 
 This challenge involves exploiting buffer overflow and format string vulnerabilities. The buffer overflow allows us to leverage the format string `%s` to leak addresses. Additionally, this challenge includes a return-to-libc (ret2libc) attack.

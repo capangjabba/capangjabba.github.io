@@ -2,7 +2,8 @@
 title = 'IHack24 Morse Encoder [PWN]'
 date = 2025-01-23T10:26:49+08:00
 draft = false
-tags = ["PWN","IHack24"]
+categories = ["CTF Writeup"]
+tags = ["pwn", "buffer-overflow", "shellcode"]
 +++
 
 

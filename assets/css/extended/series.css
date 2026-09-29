@@ -1,0 +1,18 @@
+.post-series {
+    margin-top: var(--gap);
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--code-bg);
+    font-size: 16px;
+}
+
+.post-series p {
+    margin-bottom: 6px;
+    color: var(--secondary);
+}
+
+.post-series ol {
+    margin: 0;
+    padding-inline-start: 20px;
+}

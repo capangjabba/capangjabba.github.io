@@ -1,9 +1,10 @@
 title = "Irfan Haziq's Site"
 baseURL = 'https://capangjabba.github.io/'
-languageCode = 'en-us'
+locale = 'en-us'
 theme = "papermod"
 enableInlineShortcodes = true
 enableRobotsTXT = true
+capitalizeListTitles = false
 [pagination]
 
 pagerSize = 6
@@ -30,6 +31,8 @@ apple_touch_icon = "favicons/apple-touch-icon.png"
 safari_pinned_tab = "favicons/safari-pinned-tab.svg"
 
 [taxonomies]
+category = "categories"
+series = "series"
 tag = "tags"
 
 [params.homeInfoParams]
@@ -44,15 +47,28 @@ name = "LinkedIn"
 url = "https://www.linkedin.com/in/gnapac/"
 
 [[menu.main]]
-name = "Search"
-url = "search/"
-weight = 20
+name = "Categories"
+url = "categories/"
+weight = 5
+
+[[menu.main]]
+name = "Series"
+url = "series/"
+weight = 10
 
 [[menu.main]]
 name = "Tags"
 url = "tags/"
+weight = 15
+
+[[menu.main]]
+name = "Search"
+url = "search/"
 weight = 20
 
 [outputs]
 home = [ "HTML", "RSS", "JSON" ]
 
+
+[markup.goldmark.renderer]
+unsafe = true

@@ -2,7 +2,8 @@
 title = 'Bubar Parlimen [Malware Analysis]'
 date = 2025-01-23T10:36:00+08:00
 draft = false
-tags = ["Malware Analysis","MalDoc"]
+categories = ["Malware Analysis"]
+tags = ["maldoc", "vba-macro"]
 +++
 
 A `bubarparlimen.docx` file with an external `RemoteLoad.dotm` attached template file where it contains malicious VBA Macro which will write `PE` files, fetch `.exe` + `.dll` file and executing it in the infected machine. The macro uses base64 encoding method and constructing the encoded string little by little to avoid suspicion. 

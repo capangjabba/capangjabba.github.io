@@ -1,0 +1,14 @@
+{{- /* Overrides the PaperMod hook: lists the other posts in this post's series. */ -}}
+{{- range .GetTerms "series" }}
+<nav class="post-series">
+  <p>Part of the <a href="{{ .Permalink }}">{{ .LinkTitle }}</a> series</p>
+  <ol>
+    {{- range .Pages.ByDate }}
+    <li>
+      {{- if eq .Permalink $.Permalink }}<strong>{{ .Title }}</strong>
+      {{- else }}<a href="{{ .Permalink }}">{{ .Title }}</a>{{ end -}}
+    </li>
+    {{- end }}
+  </ol>
+</nav>
+{{- end }}

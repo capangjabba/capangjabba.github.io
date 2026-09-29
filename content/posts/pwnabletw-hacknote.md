@@ -2,7 +2,9 @@
 title = 'pwnable.tw Hacknote'
 date = 2025-02-13T17:20:36+08:00
 draft = false
-tags = ["PWN","OOB Write", "use-after-free", "pwnable.tw", "heap-exploit"]
+categories = ["CTF Writeup"]
+series = ["pwnable.tw"]
+tags = ["pwn", "heap", "use-after-free"]
 +++
 
 This challenge involves exploiting Use-After-Free vulnerability. The note structure in this challenge stores `puts` function pointer besides the note content pointer. By properly allocating and free-ing memory, full control on EIP will be achieved. 

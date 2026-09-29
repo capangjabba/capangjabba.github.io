@@ -2,7 +2,8 @@
 title = 'Morpheus MCC23 [B2R]'
 date = 2025-01-23T10:27:44+08:00
 draft = false
-tags = ["Boot 2 Root", "TryHackMe"]
+categories = ["CTF Writeup"]
+tags = ["boot2root", "privilege-escalation"]
 +++
 
 Morpheus is a THM box created for MCC 2023 registration. I am not a MCC 2023 candidate but this is my take on this box :3 

@@ -2,7 +2,9 @@
 title = 'DUCTF5 Vector Overflow [PWN]'
 date = 2025-01-23T10:23:44+08:00
 draft = false
-tags = ["PWN", "DUCTF5"]
+categories = ["CTF Writeup"]
+series = ["DUCTF 2024"]
+tags = ["pwn", "buffer-overflow"]
 +++
 
 This challenge involves understanding on how Vector Variable were stored in memory for C++. The program able to overflow the Vector Pointer to change where it points to.

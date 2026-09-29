@@ -2,7 +2,8 @@
 title = 'ASEAN Notes.iso Mustang Panda [Malware Analysis]'
 date = 2025-01-25T03:49:34+08:00
 draft = false
-tags = ["Malware Analysis","trojan", "dll-side-loading"]
+categories = ["Malware Analysis"]
+tags = ["apt", "mustang-panda", "dll-sideloading"]
 +++
 
 # Malware Analysis Report: ASEAN Notes.iso from Mustang Panda Campaign

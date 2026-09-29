@@ -2,7 +2,9 @@
 title = 'pwnable.tw Dubblesort'
 date = 2025-02-08T00:45:26+08:00
 draft = false
-tags = ["PWN","OOB Write", "ret2libc", "pwnable.tw"]
+categories = ["CTF Writeup"]
+series = ["pwnable.tw"]
+tags = ["pwn", "oob-write", "stack-canary", "ret2libc"]
 +++
 
 

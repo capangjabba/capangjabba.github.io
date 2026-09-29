@@ -2,7 +2,8 @@
 title = 'OSCTF Lib Riddle [PWN]'
 date = 2025-01-23T10:22:44+08:00
 draft = false
-tags = ["PWN", "OSCTF"]
+categories = ["CTF Writeup"]
+tags = ["pwn", "buffer-overflow", "rop", "ret2libc"]
 +++
 
 This security challenge focuses on exploiting a buffer overflow vulnerability within a provided program file. Using knowledge on Linux calling conventions and Return Oriented Programming (ROP) to achieve the exploit. The ultimate goal is to perform a Ret-2-libC attack without access to the exact LibC library file used by the program.

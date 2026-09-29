@@ -3,7 +3,8 @@ title = 'ACS24 Vietnam Team Teh Tarik Cendol Writeup'
 author = ["Jeremy","Capang","Jia Qi","Aniq"]
 date = 2025-01-24T04:04:31+08:00
 draft = false
-tags = ["ACS24", "PWN", "Rev", "Misc","Web"]
+categories = ["CTF Writeup"]
+tags = ["pwn", "buffer-overflow", "reverse-engineering", "web"]
 +++
 
 # ACS2024 Quals Writeup by Teh Tarik Cendol
