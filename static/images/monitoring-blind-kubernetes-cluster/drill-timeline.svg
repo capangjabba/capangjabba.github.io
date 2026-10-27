@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <style>
+    .h { font-size: 17px; font-weight: 600; fill: #111827; }
+    .row { font-size: 15px; font-weight: 600; fill: #374151; }
+    .in { font-size: 15px; fill: #111827; }
+    .ev { font-size: 15px; font-weight: 600; fill: #111827; }
+    .tm { font-size: 13.5px; fill: #6b7280; }
+    .note { font-size: 14.5px; fill: #374151; }
+    .mark { stroke: #6b7280; stroke-width: 1.2; stroke-dasharray: 4 3; }
+  </style>
+  <rect width="1000" height="330" rx="12" fill="#ffffff"/>
+  <text x="24" y="32" class="h">Drill 2: order-worker pointed at a Redis host that doesn't exist</text>
+
+  <!-- event markers: x = 130 + 4.25 * seconds -->
+  <line x1="130" y1="96" x2="130" y2="226" class="mark"/>
+  <text x="130" y="70" class="ev">break</text>
+  <text x="130" y="88" class="tm">09:44:10 (0s)</text>
+  <line x1="704" y1="96" x2="704" y2="226" class="mark"/>
+  <text x="704" y="70" text-anchor="middle" class="ev">FIRING email</text>
+  <text x="704" y="88" text-anchor="middle" class="tm">2m15s</text>
+  <line x1="780" y1="96" x2="780" y2="226" class="mark"/>
+  <text x="782" y="70" class="ev">fix</text>
+  <text x="782" y="88" class="tm">2m33s</text>
+  <line x1="959" y1="96" x2="959" y2="226" class="mark"/>
+  <text x="959" y="70" text-anchor="end" class="ev">RESOLVED email</text>
+  <text x="959" y="88" text-anchor="end" class="tm">3m15s</text>
+
+  <!-- row 1: the worker -->
+  <text x="24" y="135" class="row">order-worker</text>
+  <rect x="130" y="110" width="650" height="40" rx="4" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="455" y="135" text-anchor="middle" class="in">broken: STATUS Running, 0 restarts, consuming nothing</text>
+  <rect x="780" y="110" width="179" height="40" rx="4" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="870" y="135" text-anchor="middle" class="in">consuming again</text>
+
+  <!-- row 2: the alert -->
+  <text x="24" y="195" class="row">alert state</text>
+  <rect x="130" y="170" width="272" height="40" rx="4" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="266" y="195" text-anchor="middle" class="in">Normal (queue filling up)</text>
+  <rect x="402" y="170" width="255" height="40" rx="4" fill="#fef3c7" stroke="#d97706"/>
+  <text x="530" y="195" text-anchor="middle" class="in">Pending (for: 1m)</text>
+  <rect x="657" y="170" width="213" height="40" rx="4" fill="#fecaca" stroke="#dc2626"/>
+  <text x="763" y="195" text-anchor="middle" class="in">Alerting</text>
+  <rect x="870" y="170" width="89" height="40" rx="4" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="914" y="195" text-anchor="middle" class="in">Normal</text>
+
+  <!-- axis -->
+  <line x1="130" y1="240" x2="959" y2="240" stroke="#9ca3af"/>
+  <line x1="402" y1="235" x2="402" y2="245" stroke="#9ca3af"/>
+  <text x="402" y="258" text-anchor="middle" class="tm">1m04s</text>
+  <line x1="657" y1="235" x2="657" y2="245" stroke="#9ca3af"/>
+  <text x="657" y="258" text-anchor="middle" class="tm">2m04s</text>
+  <line x1="870" y1="235" x2="870" y2="245" stroke="#9ca3af"/>
+  <text x="870" y="258" text-anchor="middle" class="tm">2m54s</text>
+
+  <text x="24" y="288" class="note">2m15s from break to email: about 1 minute for the queue to pass 500 jobs and get scraped</text>
+  <text x="24" y="310" class="note">and evaluated, then for: 1m, then the 10s group_wait.</text>
+</svg>

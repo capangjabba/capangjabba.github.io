@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7280"/>
+    </marker>
+    <marker id="a-green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#15803d"/>
+    </marker>
+    <style>
+      .t { font-size: 16.5px; font-weight: 600; fill: #111827; }
+      .s { font-size: 13.5px; fill: #4b5563; }
+      .g { font-size: 13.5px; fill: #15803d; font-weight: 600; }
+      .ns { font-size: 14px; fill: #6b7280; }
+      .lbl { font-size: 13.5px; fill: #374151; }
+      .old { fill: #f3f4f6; stroke: #9ca3af; stroke-width: 1.5; }
+      .new { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; }
+      .line { stroke: #6b7280; stroke-width: 1.5; fill: none; }
+      .scrape { stroke: #15803d; stroke-width: 2; fill: none; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+
+  <rect width="1000" height="600" rx="12" fill="#ffffff"/>
+  <rect x="20" y="20" width="960" height="565" rx="10" fill="none" stroke="#d1d5db" stroke-width="1.5"/>
+  <text x="36" y="44" class="t">Kubernetes cluster</text>
+
+  <!-- monitoring namespace -->
+  <rect x="40" y="60" width="920" height="160" rx="8" fill="#fafafa" stroke="#cbd5e1" stroke-dasharray="5 4"/>
+  <text x="56" y="82" class="ns">namespace: monitoring (owned by the platform team)</text>
+
+  <rect x="60" y="100" width="180" height="96" rx="8" class="old"/>
+  <text x="150" y="132" text-anchor="middle" class="t">kube-state-metrics</text>
+  <text x="150" y="154" text-anchor="middle" class="s">restarts, crashloops,</text>
+  <text x="150" y="170" text-anchor="middle" class="s">replica counts</text>
+
+  <rect x="290" y="100" width="220" height="96" rx="8" class="old"/>
+  <text x="400" y="132" text-anchor="middle" class="t">Prometheus</text>
+  <text x="400" y="154" text-anchor="middle" class="s">stock chart, config untouched</text>
+  <text x="400" y="170" text-anchor="middle" class="s">+ kubelet / cAdvisor</text>
+
+  <rect x="560" y="100" width="200" height="96" rx="8" class="old"/>
+  <text x="660" y="132" text-anchor="middle" class="t">Grafana</text>
+  <text x="660" y="154" text-anchor="middle" class="g">+ 5 alert rules</text>
+  <text x="660" y="170" text-anchor="middle" class="g">+ 1 dashboard</text>
+
+  <rect x="810" y="100" width="130" height="96" rx="8" class="old"/>
+  <text x="875" y="132" text-anchor="middle" class="t">Email</text>
+  <text x="875" y="154" text-anchor="middle" class="s">on-call inbox</text>
+  <text x="875" y="170" text-anchor="middle" class="s">(Mailpit here)</text>
+
+  <line x1="290" y1="148" x2="242" y2="148" class="line" marker-end="url(#a-gray)"/>
+  <text x="265" y="140" text-anchor="middle" class="lbl">scrape</text>
+  <line x1="560" y1="148" x2="512" y2="148" class="line" marker-end="url(#a-gray)"/>
+  <text x="535" y="140" text-anchor="middle" class="lbl">query</text>
+  <line x1="760" y1="148" x2="808" y2="148" class="line" marker-end="url(#a-green)" stroke="#15803d"/>
+  <text x="785" y="140" text-anchor="middle" class="lbl">alert</text>
+
+  <!-- shop namespace -->
+  <rect x="40" y="270" width="920" height="270" rx="8" fill="#fafafa" stroke="#cbd5e1" stroke-dasharray="5 4"/>
+  <text x="56" y="292" class="ns">namespace: shop (the apps)</text>
+
+  <!-- scrape via annotations -->
+  <path d="M400,196 V245 H355 V308" class="scrape" marker-end="url(#a-green)"/>
+  <path d="M400,245 H815 V308" class="scrape" marker-end="url(#a-green)"/>
+  <text x="608" y="239" text-anchor="middle" class="g">scrape pods annotated prometheus.io/scrape: "true"</text>
+
+  <rect x="270" y="310" width="170" height="56" rx="8" class="new"/>
+  <text x="355" y="334" text-anchor="middle" class="t">redis_exporter</text>
+  <text x="355" y="353" text-anchor="middle" class="s">stock, config only</text>
+
+  <rect x="730" y="310" width="170" height="56" rx="8" class="new"/>
+  <text x="815" y="334" text-anchor="middle" class="t">mqtt-exporter</text>
+  <text x="815" y="353" text-anchor="middle" class="s">ours, ~60 lines</text>
+
+  <rect x="60" y="420" width="150" height="44" rx="8" class="old"/>
+  <text x="135" y="447" text-anchor="middle" class="t">order-api</text>
+  <rect x="60" y="476" width="150" height="44" rx="8" class="old"/>
+  <text x="135" y="503" text-anchor="middle" class="t">order-worker</text>
+
+  <rect x="270" y="440" width="170" height="56" rx="8" class="old"/>
+  <text x="355" y="464" text-anchor="middle" class="t">Redis</text>
+  <text x="355" y="483" text-anchor="middle" class="s">BullMQ queue "orders"</text>
+
+  <rect x="540" y="440" width="140" height="56" rx="8" class="old"/>
+  <text x="610" y="464" text-anchor="middle" class="t">sensors</text>
+  <text x="610" y="483" text-anchor="middle" class="s">5 publishers</text>
+
+  <rect x="730" y="440" width="170" height="56" rx="8" class="old"/>
+  <text x="815" y="464" text-anchor="middle" class="t">Mosquitto</text>
+  <text x="815" y="483" text-anchor="middle" class="s">MQTT broker</text>
+
+  <line x1="210" y1="442" x2="268" y2="458" class="line" marker-end="url(#a-gray)"/>
+  <line x1="210" y1="498" x2="268" y2="480" class="line" marker-end="url(#a-gray)"/>
+  <line x1="680" y1="468" x2="728" y2="468" class="line" marker-end="url(#a-gray)"/>
+
+  <line x1="355" y1="366" x2="355" y2="438" stroke="#15803d" stroke-width="2" marker-end="url(#a-green)"/>
+  <text x="366" y="400" class="lbl">reads bull:orders:* keys</text>
+  <text x="366" y="416" class="lbl">(read-only ACL user)</text>
+  <line x1="815" y1="366" x2="815" y2="438" stroke="#15803d" stroke-width="2" marker-end="url(#a-green)"/>
+  <text x="826" y="400" class="lbl">$SYS topics</text>
+  <text x="826" y="416" class="lbl">+ canary message</text>
+
+  <!-- legend -->
+  <rect x="40" y="556" width="16" height="16" rx="3" class="old"/>
+  <text x="64" y="569" class="s">already in the cluster</text>
+  <rect x="220" y="556" width="16" height="16" rx="3" class="new"/>
+  <text x="244" y="569" class="s">added in this post</text>
+  <text x="400" y="569" class="s">arrows point from the caller to what it reads or sends to</text>
+</svg>
